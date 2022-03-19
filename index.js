@@ -1,11 +1,11 @@
 // Get all the images
-image_array = [
-    '1.jpg',
-    '2.jpg',
-    '3.jpg',
-    '4.jpg',
-    '5.jpg',
-  ]
+let totalImag = 20
+var image_array = []
+for(var i = 1; i < totalImag;i++){
+    image_array[i] = i + ".jpg";
+}
+console.log(image_array.length);
+console.log(image_array);
   
   function get_random_image(){
     // Get a random index
