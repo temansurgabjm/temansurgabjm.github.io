@@ -3,7 +3,8 @@ image_array = [
     '1.jpg',
     '2.jpg',
     '3.jpg',
-    '4.jpg'
+    '4.jpg',
+    '5.jpg',
   ]
   
   function get_random_image(){
