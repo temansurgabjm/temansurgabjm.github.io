@@ -50,6 +50,8 @@ function get_random_image() {
             button.innerText = "Daftar";
             button.style.visibility = 'visible'
             isFirstTime = false;
+            var audio = new Audio('sorak.mp3');
+            audio.play();
             console.log(image_array[imageNumber]);
         }, delayRandom);
     } else {
