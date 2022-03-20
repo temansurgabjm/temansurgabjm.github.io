@@ -37,6 +37,8 @@ function get_random_image() {
         img.onclick = false;
         button.style.visibility = 'hidden'
         button.innerText = "Lagi di acak";
+        button.classList.remove("btn-danger")
+        button.classList.add("btn-success")
 
         startRandomImage()
 
