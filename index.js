@@ -1,14 +1,13 @@
 // Get all the images
-let totalImag = 19
+let totalImage = 19
 var image_array = []
 let interval;
 let isFirstTime = true;
 let urlDaftar = "https://api.whatsapp.com/send/?phone=6289647476858&text=%2AAssalamualaikum.+Wr.+Wb.%2A+Kak%2C+Saya+mau+ikut+Acara+Ramadhan%0A%0A%2ANama%3A%0A%2AUsia%3A%0A%2ASekolah%3A%0A%2AAsal+kota%3A%0A&app_absent=0"
 let intervalSpeed = 20;
 let delayRandom = 5000;
-var imageNumber;
 
-for (var i = 0; i <= totalImag; i++) {
+for (var i = 0; i <= totalImage; i++) {
     image_array[i] = i + ".jpg";
 }
 
@@ -48,7 +47,6 @@ function get_random_image() {
             isFirstTime = false;
             var audio = new Audio('sorak.mp3');
             audio.play();
-            console.log(image_array[imageNumber]);
         }, delayRandom);
     } else {
         console.log("is not first time");
@@ -60,7 +58,7 @@ function startRandomImage() {
     console.log("Random Start");
     interval = setInterval(function () {
         // Genarate image number
-        imageNumber = Math.floor(Math.random() * image_array.length);
+        const imageNumber = Math.floor(Math.random() * image_array.length);
         // Show image with the generated number
         if (image_array[imageNumber] != "0.jpg") {
             document.getElementById('image_shower').src = `./images/${image_array[imageNumber]}`
