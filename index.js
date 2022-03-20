@@ -7,6 +7,11 @@ let urlDaftar = "https://api.whatsapp.com/send/?phone=6289647476858&text=%2AAssa
 let intervalSpeed = 10;
 let delayRandom = 5000;
 
+// effects
+var effectShake = 'headShake'
+var effectTada = 'tada'
+var effectsEnd = 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd'
+
 for (var i = 0; i <= totalImage; i++) {
     image_array[i] = i + ".jpg";
 }
@@ -20,6 +25,17 @@ document.getElementById('btn').onclick = function () {
     console.log('You clicked btn');
     get_random_image();
 }
+
+
+// $(function () {
+//     $('#btn').click(function () {
+//         el = $('#image_shower');
+//         el.addClass(effectShake).one(effectsEnd,
+//             function () {
+//                 el.removeClass(effectShake);
+//             });
+//     });
+// });
 
 function get_random_image() {
     console.log("getRandomImage");
@@ -38,13 +54,17 @@ function get_random_image() {
         startRandomImage()
 
         setTimeout(function () {
-            const button = document.getElementById('btn')
+            // Play effect shake
             console.log("TimeOut End");
             clearInterval(interval)
             interval = null;
             button.innerText = "Daftar";
             button.style.visibility = 'visible'
             isFirstTime = false;
+
+            startAnimation(img, effectTada)
+
+            // Play Audio
             var audio = new Audio('sorak.ogg');
             audio.play();
         }, delayRandom);
@@ -57,6 +77,10 @@ function get_random_image() {
 function startRandomImage() {
     console.log("Random Start");
     interval = setInterval(function () {
+        // start animation
+        const img = document.getElementById('image_shower')
+        startAnimation(img, effectShake)
+        // stopAnimation(img, effectShake)
         // Genarate image number
         const imageNumber = Math.floor(Math.random() * image_array.length);
         // Show image with the generated number
@@ -64,4 +88,16 @@ function startRandomImage() {
             document.getElementById('image_shower').src = `./images/${image_array[imageNumber]}`
         }
     }, intervalSpeed);
+}
+
+function startAnimation(view, anim) {
+    view.classList.add("animated")
+    view.classList.add(anim)
+    view.classList.add("forever")
+}
+
+function stopAnimation(view, anim) {
+    view.classList.remove("animated")
+    view.classList.remove(anim)
+    view.classList.remove("forever")
 }
