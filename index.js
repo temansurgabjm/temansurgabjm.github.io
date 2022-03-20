@@ -8,10 +8,6 @@ let intervalSpeed = 20;
 let delayRandom = 5000;
 var imageNumber;
 
-// config
-var lastClick = 0;
-var delay = 20;
-
 for (var i = 0; i <= totalImag; i++) {
     image_array[i] = i + ".jpg";
 }
@@ -70,11 +66,4 @@ function startRandomImage() {
             document.getElementById('image_shower').src = `./images/${image_array[imageNumber]}`
         }
     }, intervalSpeed);
-}
-
-function preventMultipleClick() {
-    // prevent multiple click
-    if (lastClick >= (Date.now() - delay))
-        return;
-    lastClick = Date.now();
 }
