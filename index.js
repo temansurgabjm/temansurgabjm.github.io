@@ -26,17 +26,6 @@ document.getElementById('btn').onclick = function () {
     get_random_image();
 }
 
-
-// $(function () {
-//     $('#btn').click(function () {
-//         el = $('#image_shower');
-//         el.addClass(effectShake).one(effectsEnd,
-//             function () {
-//                 el.removeClass(effectShake);
-//             });
-//     });
-// });
-
 function get_random_image() {
     console.log("getRandomImage");
     // preventMultipleClick()
@@ -65,8 +54,8 @@ function get_random_image() {
             startAnimation(img, effectTada)
 
             // Play Audio
-            var audio = new Audio('sorak.ogg');
-            audio.play();
+            // var audio = new Audio('sorak.ogg');
+            // audio.play();
         }, delayRandom);
     } else {
         console.log("is not first time");
