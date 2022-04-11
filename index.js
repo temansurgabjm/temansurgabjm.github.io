@@ -49,7 +49,7 @@ function get_random_image() {
             clearInterval(interval)
             interval = null;
             button.innerText = "Daftar";
-            // button.style.visibility = 'visible'
+            button.style.visibility = 'visible'
             isFirstTime = false;
 
             startAnimation(img, effectTada)
