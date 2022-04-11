@@ -55,8 +55,8 @@ function get_random_image() {
             startAnimation(img, effectTada)
 
             // Play Audio
-            // var audio = new Audio('sorak.ogg');
-            // audio.play();
+            var audio = new Audio('finish.ogg');
+            audio.play();
         }, delayRandom);
     } else {
         console.log("is not first time");
