@@ -24,7 +24,8 @@ document.getElementById('image_shower').onclick = function () {
 
 document.getElementById('btn').onclick = function () {
     console.log('You clicked btn');
-    get_random_image();
+    // window.open("https://www.w3schools.com");
+    // get_random_image();
 }
 
 function get_random_image() {
